@@ -1,0 +1,66 @@
+G0 #0
+Let:
+  T1 = {:type :ok, :f :txn, :value [[:append 82 24]], :time 390562894152, :process 1758, :index 6914}
+  T2 = {:type :ok, :f :txn, :value [[:r 65 [1 2 11 12 25 27]] [:append 82 25]], :time 390984491006, :process 1227, :index 6923}
+  T3 = {:type :ok, :f :txn, :value [[:append 82 26] [:r 81 [1 2 4 5 6]]], :time 391452640903, :process 1758, :index 6931}
+  T4 = {:type :ok, :f :txn, :value [[:r 81 [1 2 4 5 6]] [:append 82 27]], :time 391602693900, :process 2139, :index 6935}
+  T5 = {:type :ok, :f :txn, :value [[:r 82 [1 2 4 5 7 6 8 9 10 12 14 15 16 17 18 20 21 22 23 24 25 26 27]] [:append 82 29]], :time 392752799091, :process 1758, :index 6955}
+  T6 = {:type :ok, :f :txn, :value [[:append 82 12] [:append 58 29]], :time 387432687572, :process 2139, :index 6845}
+  T7 = {:type :ok, :f :txn, :value [[:append 58 30]], :time 388552709589, :process 2139, :index 6871}
+  T8 = {:type :ok, :f :txn, :value [[:append 82 16] [:append 58 31]], :time 388822831980, :process 1671, :index 6875}
+  T9 = {:type :ok, :f :txn, :value [[:append 82 17]], :time 389042755166, :process 1671, :index 6883}
+  T10 = {:type :ok, :f :txn, :value [[:append 82 18] [:r 82 [1 2 4 5 7 6 8 9 10 12 14 15 16 17 18]]], :time 389153867838, :process 1227, :index 6886}
+  T11 = {:type :ok, :f :txn, :value [[:append 82 20] [:r 81 [1 2 4 5 6]]], :time 389532732444, :process 1671, :index 6895}
+  T12 = {:type :ok, :f :txn, :value [[:append 82 21]], :time 389972647713, :process 1671, :index 6901}
+  T13 = {:type :ok, :f :txn, :value [[:append 82 22]], :time 390013731327, :process 1227, :index 6903}
+  T14 = {:type :ok, :f :txn, :value [[:append 82 23]], :time 390293726790, :process 1227, :index 6907}
+
+Then:
+  - T1 < T2, because T2 appended 25 after T1 appended 24 to 82.
+  - T2 < T3, because T3 appended 26 after T2 appended 25 to 82.
+  - T3 < T4, because T4 appended 27 after T3 appended 26 to 82.
+  - T4 < T5, because T5 appended 29 after T4 appended 27 to 82.
+  - T5 < T6, because T6 appended 12 after T5 appended 29 to 82.
+  - T6 < T7, because T7 appended 30 after T6 appended 29 to 58.
+  - T7 < T8, because T8 appended 31 after T7 appended 30 to 58.
+  - T8 < T9, because T9 appended 17 after T8 appended 16 to 82.
+  - T9 < T10, because T10 appended 18 after T9 appended 17 to 82.
+  - T10 < T11, because T11 appended 20 after T10 appended 18 to 82.
+  - T11 < T12, because T12 appended 21 after T11 appended 20 to 82.
+  - T12 < T13, because T13 appended 22 after T12 appended 21 to 82.
+  - T13 < T14, because T14 appended 23 after T13 appended 22 to 82.
+  - However, T14 < T1, because T1 appended 24 after T14 appended 23 to 82: a contradiction!
+
+
+G0 #1
+Let:
+  T1 = {:type :ok, :f :txn, :value [[:append 82 26] [:r 81 [1 2 4 5 6]]], :time 391452640903, :process 1758, :index 6931}
+  T2 = {:type :ok, :f :txn, :value [[:r 81 [1 2 4 5 6]] [:append 82 27]], :time 391602693900, :process 2139, :index 6935}
+  T3 = {:type :ok, :f :txn, :value [[:r 82 [1 2 4 5 7 6 8 9 10 12 14 15 16 17 18 20 21 22 23 24 25 26 27]] [:append 82 29]], :time 392752799091, :process 1758, :index 6955}
+  T4 = {:type :ok, :f :txn, :value [[:append 82 12] [:append 58 29]], :time 387432687572, :process 2139, :index 6845}
+  T5 = {:type :ok, :f :txn, :value [[:append 58 30]], :time 388552709589, :process 2139, :index 6871}
+  T6 = {:type :ok, :f :txn, :value [[:append 82 16] [:append 58 31]], :time 388822831980, :process 1671, :index 6875}
+  T7 = {:type :ok, :f :txn, :value [[:append 82 17]], :time 389042755166, :process 1671, :index 6883}
+  T8 = {:type :ok, :f :txn, :value [[:append 82 18] [:r 82 [1 2 4 5 7 6 8 9 10 12 14 15 16 17 18]]], :time 389153867838, :process 1227, :index 6886}
+  T9 = {:type :ok, :f :txn, :value [[:append 82 20] [:r 81 [1 2 4 5 6]]], :time 389532732444, :process 1671, :index 6895}
+  T10 = {:type :ok, :f :txn, :value [[:append 82 21]], :time 389972647713, :process 1671, :index 6901}
+  T11 = {:type :ok, :f :txn, :value [[:append 82 22]], :time 390013731327, :process 1227, :index 6903}
+  T12 = {:type :ok, :f :txn, :value [[:append 82 23]], :time 390293726790, :process 1227, :index 6907}
+  T13 = {:type :ok, :f :txn, :value [[:append 82 24]], :time 390562894152, :process 1758, :index 6914}
+  T14 = {:type :ok, :f :txn, :value [[:r 65 [1 2 11 12 25 27]] [:append 82 25]], :time 390984491006, :process 1227, :index 6923}
+
+Then:
+  - T1 < T2, because T2 appended 27 after T1 appended 26 to 82.
+  - T2 < T3, because T3 appended 29 after T2 appended 27 to 82.
+  - T3 < T4, because T4 appended 12 after T3 appended 29 to 82.
+  - T4 < T5, because T5 appended 30 after T4 appended 29 to 58.
+  - T5 < T6, because T6 appended 31 after T5 appended 30 to 58.
+  - T6 < T7, because T7 appended 17 after T6 appended 16 to 82.
+  - T7 < T8, because T8 appended 18 after T7 appended 17 to 82.
+  - T8 < T9, because T9 appended 20 after T8 appended 18 to 82.
+  - T9 < T10, because T10 appended 21 after T9 appended 20 to 82.
+  - T10 < T11, because T11 appended 22 after T10 appended 21 to 82.
+  - T11 < T12, because T12 appended 23 after T11 appended 22 to 82.
+  - T12 < T13, because T13 appended 24 after T12 appended 23 to 82.
+  - T13 < T14, because T14 appended 25 after T13 appended 24 to 82.
+  - However, T14 < T1, because T1 appended 26 after T14 appended 25 to 82: a contradiction!

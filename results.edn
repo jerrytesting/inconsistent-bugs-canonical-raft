@@ -1,0 +1,1834 @@
+{:perf {:latency-graph {:valid? true},
+        :rate-graph {:valid? true},
+        :valid? true},
+ :clock {:valid? true},
+ :stats {:valid? true,
+         :count 70590,
+         :ok-count 18258,
+         :fail-count 364,
+         :info-count 51968,
+         :by-f {:txn {:valid? true,
+                      :count 70590,
+                      :ok-count 18258,
+                      :fail-count 364,
+                      :info-count 51968}}},
+ :exceptions {:valid? true,
+              :exceptions ({:count 258,
+                            :class java.net.ConnectException,
+                            :example {:type :info,
+                                      :f :grow,
+                                      :time 177653998804,
+                                      :process :nemesis,
+                                      :exception {:via [{:type java.net.ConnectException,
+                                                         :message "Connection refused (Connection refused)",
+                                                         :at [java.net.PlainSocketImpl
+                                                              socketConnect
+                                                              "PlainSocketImpl.java"
+                                                              -2]}],
+                                                  :trace [[java.net.PlainSocketImpl
+                                                           socketConnect
+                                                           "PlainSocketImpl.java"
+                                                           -2]
+                                                          [java.net.AbstractPlainSocketImpl
+                                                           doConnect
+                                                           "AbstractPlainSocketImpl.java"
+                                                           412]
+                                                          [java.net.AbstractPlainSocketImpl
+                                                           connectToAddress
+                                                           "AbstractPlainSocketImpl.java"
+                                                           255]
+                                                          [java.net.AbstractPlainSocketImpl
+                                                           connect
+                                                           "AbstractPlainSocketImpl.java"
+                                                           237]
+                                                          [java.net.SocksSocketImpl
+                                                           connect
+                                                           "SocksSocketImpl.java"
+                                                           392]
+                                                          [java.net.Socket
+                                                           connect
+                                                           "Socket.java"
+                                                           609]
+                                                          [org.apache.http.conn.socket.PlainConnectionSocketFactory
+                                                           connectSocket
+                                                           "PlainConnectionSocketFactory.java"
+                                                           75]
+                                                          [org.apache.http.impl.conn.DefaultHttpClientConnectionOperator
+                                                           connect
+                                                           "DefaultHttpClientConnectionOperator.java"
+                                                           142]
+                                                          [org.apache.http.impl.conn.BasicHttpClientConnectionManager
+                                                           connect
+                                                           "BasicHttpClientConnectionManager.java"
+                                                           313]
+                                                          [org.apache.http.impl.execchain.MainClientExec
+                                                           establishRoute
+                                                           "MainClientExec.java"
+                                                           393]
+                                                          [org.apache.http.impl.execchain.MainClientExec
+                                                           execute
+                                                           "MainClientExec.java"
+                                                           236]
+                                                          [org.apache.http.impl.execchain.ProtocolExec
+                                                           execute
+                                                           "ProtocolExec.java"
+                                                           186]
+                                                          [org.apache.http.impl.execchain.RetryExec
+                                                           execute
+                                                           "RetryExec.java"
+                                                           89]
+                                                          [org.apache.http.impl.execchain.RedirectExec
+                                                           execute
+                                                           "RedirectExec.java"
+                                                           110]
+                                                          [org.apache.http.impl.client.InternalHttpClient
+                                                           doExecute
+                                                           "InternalHttpClient.java"
+                                                           185]
+                                                          [org.apache.http.impl.client.CloseableHttpClient
+                                                           execute
+                                                           "CloseableHttpClient.java"
+                                                           83]
+                                                          [clj_http.core$request
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           641]
+                                                          [clj_http.core$request
+                                                           invoke
+                                                           "core.clj"
+                                                           566]
+                                                          [clj_http.core$request
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           567]
+                                                          [clj_http.core$request
+                                                           invoke
+                                                           "core.clj"
+                                                           566]
+                                                          [clojure.lang.Var
+                                                           invoke
+                                                           "Var.java"
+                                                           384]
+                                                          [clj_http.client$wrap_request_timing$fn__1843
+                                                           invoke
+                                                           "client.clj"
+                                                           1074]
+                                                          [clj_http.headers$wrap_header_map$fn__963
+                                                           invoke
+                                                           "headers.clj"
+                                                           152]
+                                                          [clj_http.client$wrap_query_params$fn__1723
+                                                           invoke
+                                                           "client.clj"
+                                                           808]
+                                                          [clj_http.client$wrap_basic_auth$fn__1729
+                                                           invoke
+                                                           "client.clj"
+                                                           831]
+                                                          [clj_http.client$wrap_oauth$fn__1734
+                                                           invoke
+                                                           "client.clj"
+                                                           848]
+                                                          [clj_http.client$wrap_user_info$fn__1743
+                                                           invoke
+                                                           "client.clj"
+                                                           868]
+                                                          [clj_http.client$wrap_url$fn__1825
+                                                           invoke
+                                                           "client.clj"
+                                                           1026]
+                                                          [clj_http.client$wrap_decompression$fn__1484
+                                                           invoke
+                                                           "client.clj"
+                                                           415]
+                                                          [clj_http.client$wrap_input_coercion$fn__1647
+                                                           invoke
+                                                           "client.clj"
+                                                           628]
+                                                          [clj_http.client$wrap_additional_header_parsing$fn__1672
+                                                           invoke
+                                                           "client.clj"
+                                                           683]
+                                                          [clj_http.client$wrap_output_coercion$fn__1634
+                                                           invoke
+                                                           "client.clj"
+                                                           572]
+                                                          [clj_http.client$wrap_exceptions$fn__1431
+                                                           invoke
+                                                           "client.clj"
+                                                           249]
+                                                          [clj_http.client$wrap_accept$fn__1687
+                                                           invoke
+                                                           "client.clj"
+                                                           726]
+                                                          [clj_http.client$wrap_accept_encoding$fn__1694
+                                                           invoke
+                                                           "client.clj"
+                                                           748]
+                                                          [clj_http.client$wrap_content_type$fn__1681
+                                                           invoke
+                                                           "client.clj"
+                                                           709]
+                                                          [clj_http.client$wrap_form_params$fn__1790
+                                                           invoke
+                                                           "client.clj"
+                                                           950]
+                                                          [clj_http.client$wrap_nested_params$fn__1811
+                                                           invoke
+                                                           "client.clj"
+                                                           984]
+                                                          [clj_http.client$wrap_flatten_nested_params$fn__1820
+                                                           invoke
+                                                           "client.clj"
+                                                           1008]
+                                                          [clj_http.client$wrap_method$fn__1748
+                                                           invoke
+                                                           "client.clj"
+                                                           884]
+                                                          [clj_http.cookies$wrap_cookies$fn__861
+                                                           invoke
+                                                           "cookies.clj"
+                                                           131]
+                                                          [clj_http.links$wrap_links$fn__1350
+                                                           invoke
+                                                           "links.clj"
+                                                           63]
+                                                          [clj_http.client$wrap_unknown_host$fn__1828
+                                                           invoke
+                                                           "client.clj"
+                                                           1037]
+                                                          [jepsen.dqlite.client$request
+                                                           invokeStatic
+                                                           "client.clj"
+                                                           30]
+                                                          [jepsen.dqlite.client$request
+                                                           doInvoke
+                                                           "client.clj"
+                                                           22]
+                                                          [clojure.lang.RestFn
+                                                           invoke
+                                                           "RestFn.java"
+                                                           445]
+                                                          [jepsen.dqlite.client$members
+                                                           invokeStatic
+                                                           "client.clj"
+                                                           53]
+                                                          [jepsen.dqlite.client$members
+                                                           invoke
+                                                           "client.clj"
+                                                           49]
+                                                          [jepsen.dqlite.db$members
+                                                           invokeStatic
+                                                           "db.clj"
+                                                           109]
+                                                          [jepsen.dqlite.db$members
+                                                           invoke
+                                                           "db.clj"
+                                                           106]
+                                                          [jepsen.dqlite.db$refresh_members_BANG_
+                                                           invokeStatic
+                                                           "db.clj"
+                                                           115]
+                                                          [jepsen.dqlite.db$refresh_members_BANG_
+                                                           invoke
+                                                           "db.clj"
+                                                           111]
+                                                          [jepsen.dqlite.db$grow_BANG_
+                                                           invokeStatic
+                                                           "db.clj"
+                                                           142]
+                                                          [jepsen.dqlite.db$grow_BANG_
+                                                           invoke
+                                                           "db.clj"
+                                                           137]
+                                                          [jepsen.dqlite.nemesis$member_nemesis$reify__3807
+                                                           invoke_BANG_
+                                                           "nemesis.clj"
+                                                           19]
+                                                          [jepsen.nemesis.ReflCompose
+                                                           invoke_BANG_
+                                                           "nemesis.clj"
+                                                           342]
+                                                          [jepsen.nemesis.Validate
+                                                           invoke_BANG_
+                                                           "nemesis.clj"
+                                                           63]
+                                                          [jepsen.generator.interpreter.NemesisWorker
+                                                           invoke_BANG_
+                                                           "interpreter.clj"
+                                                           76]
+                                                          [jepsen.generator.interpreter$spawn_worker$fn__13478$fn__13479
+                                                           invoke
+                                                           "interpreter.clj"
+                                                           139]
+                                                          [jepsen.generator.interpreter$spawn_worker$fn__13478
+                                                           invoke
+                                                           "interpreter.clj"
+                                                           122]
+                                                          [clojure.core$binding_conveyor_fn$fn__5823
+                                                           invoke
+                                                           "core.clj"
+                                                           2047]
+                                                          [clojure.lang.AFn
+                                                           call
+                                                           "AFn.java"
+                                                           18]
+                                                          [java.util.concurrent.FutureTask
+                                                           run
+                                                           "FutureTask.java"
+                                                           264]
+                                                          [java.util.concurrent.ThreadPoolExecutor
+                                                           runWorker
+                                                           "ThreadPoolExecutor.java"
+                                                           1128]
+                                                          [java.util.concurrent.ThreadPoolExecutor$Worker
+                                                           run
+                                                           "ThreadPoolExecutor.java"
+                                                           628]
+                                                          [java.lang.Thread
+                                                           run
+                                                           "Thread.java"
+                                                           829]],
+                                                  :cause "Connection refused (Connection refused)"},
+                                      :error "indeterminate: Connection refused (Connection refused)",
+                                      :index 2921}}
+                           {:count 22,
+                            :class java.net.SocketTimeoutException,
+                            :example {:type :info,
+                                      :f :grow,
+                                      :time 18594111438,
+                                      :process :nemesis,
+                                      :exception {:via [{:type java.net.SocketTimeoutException,
+                                                         :message "Read timed out",
+                                                         :at [java.net.SocketInputStream
+                                                              socketRead0
+                                                              "SocketInputStream.java"
+                                                              -2]}],
+                                                  :trace [[java.net.SocketInputStream
+                                                           socketRead0
+                                                           "SocketInputStream.java"
+                                                           -2]
+                                                          [java.net.SocketInputStream
+                                                           socketRead
+                                                           "SocketInputStream.java"
+                                                           115]
+                                                          [java.net.SocketInputStream
+                                                           read
+                                                           "SocketInputStream.java"
+                                                           168]
+                                                          [java.net.SocketInputStream
+                                                           read
+                                                           "SocketInputStream.java"
+                                                           140]
+                                                          [org.apache.http.impl.io.SessionInputBufferImpl
+                                                           streamRead
+                                                           "SessionInputBufferImpl.java"
+                                                           137]
+                                                          [org.apache.http.impl.io.SessionInputBufferImpl
+                                                           fillBuffer
+                                                           "SessionInputBufferImpl.java"
+                                                           153]
+                                                          [org.apache.http.impl.io.SessionInputBufferImpl
+                                                           readLine
+                                                           "SessionInputBufferImpl.java"
+                                                           280]
+                                                          [org.apache.http.impl.conn.DefaultHttpResponseParser
+                                                           parseHead
+                                                           "DefaultHttpResponseParser.java"
+                                                           138]
+                                                          [org.apache.http.impl.conn.DefaultHttpResponseParser
+                                                           parseHead
+                                                           "DefaultHttpResponseParser.java"
+                                                           56]
+                                                          [org.apache.http.impl.io.AbstractMessageParser
+                                                           parse
+                                                           "AbstractMessageParser.java"
+                                                           259]
+                                                          [org.apache.http.impl.DefaultBHttpClientConnection
+                                                           receiveResponseHeader
+                                                           "DefaultBHttpClientConnection.java"
+                                                           163]
+                                                          [org.apache.http.protocol.HttpRequestExecutor
+                                                           doReceiveResponse
+                                                           "HttpRequestExecutor.java"
+                                                           273]
+                                                          [org.apache.http.protocol.HttpRequestExecutor
+                                                           execute
+                                                           "HttpRequestExecutor.java"
+                                                           125]
+                                                          [org.apache.http.impl.execchain.MainClientExec
+                                                           execute
+                                                           "MainClientExec.java"
+                                                           272]
+                                                          [org.apache.http.impl.execchain.ProtocolExec
+                                                           execute
+                                                           "ProtocolExec.java"
+                                                           186]
+                                                          [org.apache.http.impl.execchain.RetryExec
+                                                           execute
+                                                           "RetryExec.java"
+                                                           89]
+                                                          [org.apache.http.impl.execchain.RedirectExec
+                                                           execute
+                                                           "RedirectExec.java"
+                                                           110]
+                                                          [org.apache.http.impl.client.InternalHttpClient
+                                                           doExecute
+                                                           "InternalHttpClient.java"
+                                                           185]
+                                                          [org.apache.http.impl.client.CloseableHttpClient
+                                                           execute
+                                                           "CloseableHttpClient.java"
+                                                           83]
+                                                          [clj_http.core$request
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           641]
+                                                          [clj_http.core$request
+                                                           invoke
+                                                           "core.clj"
+                                                           566]
+                                                          [clj_http.core$request
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           567]
+                                                          [clj_http.core$request
+                                                           invoke
+                                                           "core.clj"
+                                                           566]
+                                                          [clojure.lang.Var
+                                                           invoke
+                                                           "Var.java"
+                                                           384]
+                                                          [clj_http.client$wrap_request_timing$fn__1843
+                                                           invoke
+                                                           "client.clj"
+                                                           1074]
+                                                          [clj_http.headers$wrap_header_map$fn__963
+                                                           invoke
+                                                           "headers.clj"
+                                                           152]
+                                                          [clj_http.client$wrap_query_params$fn__1723
+                                                           invoke
+                                                           "client.clj"
+                                                           808]
+                                                          [clj_http.client$wrap_basic_auth$fn__1729
+                                                           invoke
+                                                           "client.clj"
+                                                           831]
+                                                          [clj_http.client$wrap_oauth$fn__1734
+                                                           invoke
+                                                           "client.clj"
+                                                           848]
+                                                          [clj_http.client$wrap_user_info$fn__1743
+                                                           invoke
+                                                           "client.clj"
+                                                           868]
+                                                          [clj_http.client$wrap_url$fn__1825
+                                                           invoke
+                                                           "client.clj"
+                                                           1026]
+                                                          [clj_http.client$wrap_decompression$fn__1484
+                                                           invoke
+                                                           "client.clj"
+                                                           415]
+                                                          [clj_http.client$wrap_input_coercion$fn__1647
+                                                           invoke
+                                                           "client.clj"
+                                                           628]
+                                                          [clj_http.client$wrap_additional_header_parsing$fn__1672
+                                                           invoke
+                                                           "client.clj"
+                                                           683]
+                                                          [clj_http.client$wrap_output_coercion$fn__1634
+                                                           invoke
+                                                           "client.clj"
+                                                           572]
+                                                          [clj_http.client$wrap_exceptions$fn__1431
+                                                           invoke
+                                                           "client.clj"
+                                                           249]
+                                                          [clj_http.client$wrap_accept$fn__1687
+                                                           invoke
+                                                           "client.clj"
+                                                           726]
+                                                          [clj_http.client$wrap_accept_encoding$fn__1694
+                                                           invoke
+                                                           "client.clj"
+                                                           748]
+                                                          [clj_http.client$wrap_content_type$fn__1681
+                                                           invoke
+                                                           "client.clj"
+                                                           709]
+                                                          [clj_http.client$wrap_form_params$fn__1790
+                                                           invoke
+                                                           "client.clj"
+                                                           950]
+                                                          [clj_http.client$wrap_nested_params$fn__1811
+                                                           invoke
+                                                           "client.clj"
+                                                           984]
+                                                          [clj_http.client$wrap_flatten_nested_params$fn__1820
+                                                           invoke
+                                                           "client.clj"
+                                                           1008]
+                                                          [clj_http.client$wrap_method$fn__1748
+                                                           invoke
+                                                           "client.clj"
+                                                           884]
+                                                          [clj_http.cookies$wrap_cookies$fn__861
+                                                           invoke
+                                                           "cookies.clj"
+                                                           131]
+                                                          [clj_http.links$wrap_links$fn__1350
+                                                           invoke
+                                                           "links.clj"
+                                                           63]
+                                                          [clj_http.client$wrap_unknown_host$fn__1828
+                                                           invoke
+                                                           "client.clj"
+                                                           1037]
+                                                          [jepsen.dqlite.client$request
+                                                           invokeStatic
+                                                           "client.clj"
+                                                           30]
+                                                          [jepsen.dqlite.client$request
+                                                           doInvoke
+                                                           "client.clj"
+                                                           22]
+                                                          [clojure.lang.RestFn
+                                                           invoke
+                                                           "RestFn.java"
+                                                           445]
+                                                          [jepsen.dqlite.client$members
+                                                           invokeStatic
+                                                           "client.clj"
+                                                           53]
+                                                          [jepsen.dqlite.client$members
+                                                           invoke
+                                                           "client.clj"
+                                                           49]
+                                                          [jepsen.dqlite.db$members
+                                                           invokeStatic
+                                                           "db.clj"
+                                                           109]
+                                                          [jepsen.dqlite.db$members
+                                                           invoke
+                                                           "db.clj"
+                                                           106]
+                                                          [jepsen.dqlite.db$refresh_members_BANG_
+                                                           invokeStatic
+                                                           "db.clj"
+                                                           115]
+                                                          [jepsen.dqlite.db$refresh_members_BANG_
+                                                           invoke
+                                                           "db.clj"
+                                                           111]
+                                                          [jepsen.dqlite.db$grow_BANG_
+                                                           invokeStatic
+                                                           "db.clj"
+                                                           142]
+                                                          [jepsen.dqlite.db$grow_BANG_
+                                                           invoke
+                                                           "db.clj"
+                                                           137]
+                                                          [jepsen.dqlite.nemesis$member_nemesis$reify__3807
+                                                           invoke_BANG_
+                                                           "nemesis.clj"
+                                                           19]
+                                                          [jepsen.nemesis.ReflCompose
+                                                           invoke_BANG_
+                                                           "nemesis.clj"
+                                                           342]
+                                                          [jepsen.nemesis.Validate
+                                                           invoke_BANG_
+                                                           "nemesis.clj"
+                                                           63]
+                                                          [jepsen.generator.interpreter.NemesisWorker
+                                                           invoke_BANG_
+                                                           "interpreter.clj"
+                                                           76]
+                                                          [jepsen.generator.interpreter$spawn_worker$fn__13478$fn__13479
+                                                           invoke
+                                                           "interpreter.clj"
+                                                           139]
+                                                          [jepsen.generator.interpreter$spawn_worker$fn__13478
+                                                           invoke
+                                                           "interpreter.clj"
+                                                           122]
+                                                          [clojure.core$binding_conveyor_fn$fn__5823
+                                                           invoke
+                                                           "core.clj"
+                                                           2047]
+                                                          [clojure.lang.AFn
+                                                           call
+                                                           "AFn.java"
+                                                           18]
+                                                          [java.util.concurrent.FutureTask
+                                                           run
+                                                           "FutureTask.java"
+                                                           264]
+                                                          [java.util.concurrent.ThreadPoolExecutor
+                                                           runWorker
+                                                           "ThreadPoolExecutor.java"
+                                                           1128]
+                                                          [java.util.concurrent.ThreadPoolExecutor$Worker
+                                                           run
+                                                           "ThreadPoolExecutor.java"
+                                                           628]
+                                                          [java.lang.Thread
+                                                           run
+                                                           "Thread.java"
+                                                           829]],
+                                                  :cause "Read timed out"},
+                                      :error "indeterminate: Read timed out",
+                                      :index 372}}
+                           {:count 8,
+                            :class clojure.lang.ExceptionInfo,
+                            :example {:type :info,
+                                      :f :shrink,
+                                      :time 5306924943,
+                                      :process :nemesis,
+                                      :exception {:via [{:type clojure.lang.ExceptionInfo,
+                                                         :message "Command exited with non-zero status 1 on node n5:\ncd /; rm -rf /opt/fs/dqlite/data/* /opt/fs/dqlite/data/.*\n\nSTDIN:\nnull\n\nSTDOUT:\n\n\nSTDERR:\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/.'\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/..'\n",
+                                                         :data {:type :jepsen.control/nonzero-exit,
+                                                                :cmd "cd /; rm -rf /opt/fs/dqlite/data/* /opt/fs/dqlite/data/.*",
+                                                                :out "",
+                                                                :err "rm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/.'\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/..'\n",
+                                                                :exit 1,
+                                                                :host "n5",
+                                                                :action {:cmd "cd /; rm -rf /opt/fs/dqlite/data/* /opt/fs/dqlite/data/.*"}},
+                                                         :at [slingshot.support$stack_trace
+                                                              invoke
+                                                              "support.clj"
+                                                              201]}],
+                                                  :trace [[slingshot.support$stack_trace
+                                                           invoke
+                                                           "support.clj"
+                                                           201]
+                                                          [jepsen.control.core$throw_on_nonzero_exit
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           160]
+                                                          [jepsen.control.core$throw_on_nonzero_exit
+                                                           invoke
+                                                           "core.clj"
+                                                           155]
+                                                          [jepsen.control$exec_STAR_
+                                                           invokeStatic
+                                                           "control.clj"
+                                                           149]
+                                                          [jepsen.control$exec_STAR_
+                                                           doInvoke
+                                                           "control.clj"
+                                                           146]
+                                                          [clojure.lang.RestFn
+                                                           applyTo
+                                                           "RestFn.java"
+                                                           137]
+                                                          [clojure.core$apply
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           667]
+                                                          [clojure.core$apply
+                                                           invoke
+                                                           "core.clj"
+                                                           662]
+                                                          [jepsen.control$exec
+                                                           invokeStatic
+                                                           "control.clj"
+                                                           165]
+                                                          [jepsen.control$exec
+                                                           doInvoke
+                                                           "control.clj"
+                                                           159]
+                                                          [clojure.lang.RestFn
+                                                           invoke
+                                                           "RestFn.java"
+                                                           457]
+                                                          [jepsen.dqlite.db$wipe_BANG_
+                                                           invokeStatic
+                                                           "db.clj"
+                                                           129]
+                                                          [jepsen.dqlite.db$wipe_BANG_
+                                                           invoke
+                                                           "db.clj"
+                                                           124]
+                                                          [jepsen.dqlite.db$shrink_BANG_$fn__1990
+                                                           invoke
+                                                           "db.clj"
+                                                           185]
+                                                          [jepsen.control$on_nodes$fn__6825
+                                                           invoke
+                                                           "control.clj"
+                                                           318]
+                                                          [clojure.lang.AFn
+                                                           applyToHelper
+                                                           "AFn.java"
+                                                           154]
+                                                          [clojure.lang.AFn
+                                                           applyTo
+                                                           "AFn.java"
+                                                           144]
+                                                          [clojure.core$apply
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           667]
+                                                          [clojure.core$with_bindings_STAR_
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           1990]
+                                                          [clojure.core$with_bindings_STAR_
+                                                           doInvoke
+                                                           "core.clj"
+                                                           1990]
+                                                          [clojure.lang.RestFn
+                                                           applyTo
+                                                           "RestFn.java"
+                                                           142]
+                                                          [clojure.core$apply
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           671]
+                                                          [clojure.core$bound_fn_STAR_$fn__5818
+                                                           doInvoke
+                                                           "core.clj"
+                                                           2020]
+                                                          [clojure.lang.RestFn
+                                                           invoke
+                                                           "RestFn.java"
+                                                           408]
+                                                          [dom_top.core$real_pmap_helper$build_thread__406$fn__407
+                                                           invoke
+                                                           "core.clj"
+                                                           152]
+                                                          [clojure.lang.AFn
+                                                           applyToHelper
+                                                           "AFn.java"
+                                                           152]
+                                                          [clojure.lang.AFn
+                                                           applyTo
+                                                           "AFn.java"
+                                                           144]
+                                                          [clojure.core$apply
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           667]
+                                                          [clojure.core$with_bindings_STAR_
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           1990]
+                                                          [clojure.core$with_bindings_STAR_
+                                                           doInvoke
+                                                           "core.clj"
+                                                           1990]
+                                                          [clojure.lang.RestFn
+                                                           invoke
+                                                           "RestFn.java"
+                                                           425]
+                                                          [clojure.lang.AFn
+                                                           applyToHelper
+                                                           "AFn.java"
+                                                           156]
+                                                          [clojure.lang.RestFn
+                                                           applyTo
+                                                           "RestFn.java"
+                                                           132]
+                                                          [clojure.core$apply
+                                                           invokeStatic
+                                                           "core.clj"
+                                                           671]
+                                                          [clojure.core$bound_fn_STAR_$fn__5818
+                                                           doInvoke
+                                                           "core.clj"
+                                                           2020]
+                                                          [clojure.lang.RestFn
+                                                           invoke
+                                                           "RestFn.java"
+                                                           397]
+                                                          [clojure.lang.AFn
+                                                           run
+                                                           "AFn.java"
+                                                           22]
+                                                          [java.lang.Thread
+                                                           run
+                                                           "Thread.java"
+                                                           829]],
+                                                  :cause "Command exited with non-zero status 1 on node n5:\ncd /; rm -rf /opt/fs/dqlite/data/* /opt/fs/dqlite/data/.*\n\nSTDIN:\nnull\n\nSTDOUT:\n\n\nSTDERR:\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/.'\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/..'\n",
+                                                  :data {:type :jepsen.control/nonzero-exit,
+                                                         :cmd "cd /; rm -rf /opt/fs/dqlite/data/* /opt/fs/dqlite/data/.*",
+                                                         :out "",
+                                                         :err "rm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/.'\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/..'\n",
+                                                         :exit 1,
+                                                         :host "n5",
+                                                         :action {:cmd "cd /; rm -rf /opt/fs/dqlite/data/* /opt/fs/dqlite/data/.*"}}},
+                                      :error "indeterminate: Command exited with non-zero status 1 on node n5:\ncd /; rm -rf /opt/fs/dqlite/data/* /opt/fs/dqlite/data/.*\n\nSTDIN:\nnull\n\nSTDOUT:\n\n\nSTDERR:\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/.'\nrm: refusing to remove '.' or '..' directory: skipping '/opt/fs/dqlite/data/..'\n",
+                                      :index 102}})},
+ :assert {:valid? true, :count 0, :matches ()},
+ :core-dump {:valid? true, :count 0, :blips ()},
+ :workload {:valid? false,
+            :anomaly-types (:G0
+                            :G1c
+                            :cycle-search-timeout
+                            :incompatible-order),
+            :anomalies {:G0 [{:cycle [{:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 24]],
+                                       :time 390562894152,
+                                       :process 1758,
+                                       :index 6914}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:r
+                                                65
+                                                [1 2 11 12 25 27]]
+                                               [:append 82 25]],
+                                       :time 390984491006,
+                                       :process 1227,
+                                       :index 6923}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 26]
+                                               [:r 81 [1 2 4 5 6]]],
+                                       :time 391452640903,
+                                       :process 1758,
+                                       :index 6931}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:r 81 [1 2 4 5 6]]
+                                               [:append 82 27]],
+                                       :time 391602693900,
+                                       :process 2139,
+                                       :index 6935}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:r
+                                                82
+                                                [1
+                                                 2
+                                                 4
+                                                 5
+                                                 7
+                                                 6
+                                                 8
+                                                 9
+                                                 10
+                                                 12
+                                                 14
+                                                 15
+                                                 16
+                                                 17
+                                                 18
+                                                 20
+                                                 21
+                                                 22
+                                                 23
+                                                 24
+                                                 25
+                                                 26
+                                                 27]]
+                                               [:append 82 29]],
+                                       :time 392752799091,
+                                       :process 1758,
+                                       :index 6955}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 12]
+                                               [:append 58 29]],
+                                       :time 387432687572,
+                                       :process 2139,
+                                       :index 6845}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 58 30]],
+                                       :time 388552709589,
+                                       :process 2139,
+                                       :index 6871}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 16]
+                                               [:append 58 31]],
+                                       :time 388822831980,
+                                       :process 1671,
+                                       :index 6875}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 17]],
+                                       :time 389042755166,
+                                       :process 1671,
+                                       :index 6883}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 18]
+                                               [:r
+                                                82
+                                                [1
+                                                 2
+                                                 4
+                                                 5
+                                                 7
+                                                 6
+                                                 8
+                                                 9
+                                                 10
+                                                 12
+                                                 14
+                                                 15
+                                                 16
+                                                 17
+                                                 18]]],
+                                       :time 389153867838,
+                                       :process 1227,
+                                       :index 6886}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 20]
+                                               [:r 81 [1 2 4 5 6]]],
+                                       :time 389532732444,
+                                       :process 1671,
+                                       :index 6895}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 21]],
+                                       :time 389972647713,
+                                       :process 1671,
+                                       :index 6901}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 22]],
+                                       :time 390013731327,
+                                       :process 1227,
+                                       :index 6903}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 23]],
+                                       :time 390293726790,
+                                       :process 1227,
+                                       :index 6907}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 24]],
+                                       :time 390562894152,
+                                       :process 1758,
+                                       :index 6914}],
+                              :steps ({:type :ww,
+                                       :key 82,
+                                       :value 24,
+                                       :value' 25,
+                                       :a-mop-index 0,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 25,
+                                       :value' 26,
+                                       :a-mop-index 1,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 26,
+                                       :value' 27,
+                                       :a-mop-index 0,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 27,
+                                       :value' 29,
+                                       :a-mop-index 1,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 29,
+                                       :value' 12,
+                                       :a-mop-index 1,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 58,
+                                       :value 29,
+                                       :value' 30,
+                                       :a-mop-index 1,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 58,
+                                       :value 30,
+                                       :value' 31,
+                                       :a-mop-index 0,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 16,
+                                       :value' 17,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 17,
+                                       :value' 18,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 18,
+                                       :value' 20,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 20,
+                                       :value' 21,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 21,
+                                       :value' 22,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 22,
+                                       :value' 23,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 23,
+                                       :value' 24,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}),
+                              :type :G0}
+                             {:cycle [{:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 26]
+                                               [:r 81 [1 2 4 5 6]]],
+                                       :time 391452640903,
+                                       :process 1758,
+                                       :index 6931}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:r 81 [1 2 4 5 6]]
+                                               [:append 82 27]],
+                                       :time 391602693900,
+                                       :process 2139,
+                                       :index 6935}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:r
+                                                82
+                                                [1
+                                                 2
+                                                 4
+                                                 5
+                                                 7
+                                                 6
+                                                 8
+                                                 9
+                                                 10
+                                                 12
+                                                 14
+                                                 15
+                                                 16
+                                                 17
+                                                 18
+                                                 20
+                                                 21
+                                                 22
+                                                 23
+                                                 24
+                                                 25
+                                                 26
+                                                 27]]
+                                               [:append 82 29]],
+                                       :time 392752799091,
+                                       :process 1758,
+                                       :index 6955}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 12]
+                                               [:append 58 29]],
+                                       :time 387432687572,
+                                       :process 2139,
+                                       :index 6845}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 58 30]],
+                                       :time 388552709589,
+                                       :process 2139,
+                                       :index 6871}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 16]
+                                               [:append 58 31]],
+                                       :time 388822831980,
+                                       :process 1671,
+                                       :index 6875}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 17]],
+                                       :time 389042755166,
+                                       :process 1671,
+                                       :index 6883}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 18]
+                                               [:r
+                                                82
+                                                [1
+                                                 2
+                                                 4
+                                                 5
+                                                 7
+                                                 6
+                                                 8
+                                                 9
+                                                 10
+                                                 12
+                                                 14
+                                                 15
+                                                 16
+                                                 17
+                                                 18]]],
+                                       :time 389153867838,
+                                       :process 1227,
+                                       :index 6886}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 20]
+                                               [:r 81 [1 2 4 5 6]]],
+                                       :time 389532732444,
+                                       :process 1671,
+                                       :index 6895}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 21]],
+                                       :time 389972647713,
+                                       :process 1671,
+                                       :index 6901}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 22]],
+                                       :time 390013731327,
+                                       :process 1227,
+                                       :index 6903}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 23]],
+                                       :time 390293726790,
+                                       :process 1227,
+                                       :index 6907}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 24]],
+                                       :time 390562894152,
+                                       :process 1758,
+                                       :index 6914}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:r
+                                                65
+                                                [1 2 11 12 25 27]]
+                                               [:append 82 25]],
+                                       :time 390984491006,
+                                       :process 1227,
+                                       :index 6923}
+                                      {:type :ok,
+                                       :f :txn,
+                                       :value [[:append 82 26]
+                                               [:r 81 [1 2 4 5 6]]],
+                                       :time 391452640903,
+                                       :process 1758,
+                                       :index 6931}],
+                              :steps ({:type :ww,
+                                       :key 82,
+                                       :value 26,
+                                       :value' 27,
+                                       :a-mop-index 0,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 27,
+                                       :value' 29,
+                                       :a-mop-index 1,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 29,
+                                       :value' 12,
+                                       :a-mop-index 1,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 58,
+                                       :value 29,
+                                       :value' 30,
+                                       :a-mop-index 1,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 58,
+                                       :value 30,
+                                       :value' 31,
+                                       :a-mop-index 0,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 16,
+                                       :value' 17,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 17,
+                                       :value' 18,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 18,
+                                       :value' 20,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 20,
+                                       :value' 21,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 21,
+                                       :value' 22,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 22,
+                                       :value' 23,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 23,
+                                       :value' 24,
+                                       :a-mop-index 0,
+                                       :b-mop-index 0}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 24,
+                                       :value' 25,
+                                       :a-mop-index 0,
+                                       :b-mop-index 1}
+                                      {:type :ww,
+                                       :key 82,
+                                       :value 25,
+                                       :value' 26,
+                                       :a-mop-index 1,
+                                       :b-mop-index 0}),
+                              :type :G0}],
+                        :G1c [{:cycle [{:type :ok,
+                                        :f :txn,
+                                        :value [[:append 123 28]
+                                                [:append 123 29]],
+                                        :time 588517556506,
+                                        :process 1707,
+                                        :index 10559}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 124 5]
+                                                [:r
+                                                 123
+                                                 [1
+                                                  2
+                                                  3
+                                                  6
+                                                  9
+                                                  10
+                                                  11
+                                                  13
+                                                  14
+                                                  16
+                                                  17
+                                                  18
+                                                  19
+                                                  20
+                                                  21
+                                                  22
+                                                  24
+                                                  25
+                                                  26
+                                                  27
+                                                  28
+                                                  29]]],
+                                        :time 589177567419,
+                                        :process 1707,
+                                        :index 10573}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r 124 [1 2 3 4 5]]
+                                                [:append 120 21]],
+                                        :time 589496223737,
+                                        :process 1707,
+                                        :index 10579}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 116 14]
+                                                [:r
+                                                 120
+                                                 [1
+                                                  2
+                                                  3
+                                                  6
+                                                  7
+                                                  8
+                                                  9
+                                                  11
+                                                  13
+                                                  14
+                                                  15
+                                                  18
+                                                  19
+                                                  20
+                                                  21]]],
+                                        :time 589611045558,
+                                        :process 1707,
+                                        :index 10581}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r
+                                                 120
+                                                 [1
+                                                  2
+                                                  3
+                                                  6
+                                                  7
+                                                  8
+                                                  9
+                                                  11
+                                                  13
+                                                  14
+                                                  15
+                                                  18
+                                                  19
+                                                  20
+                                                  21
+                                                  22
+                                                  23
+                                                  24
+                                                  25]]
+                                                [:append 116 16]],
+                                        :time 592051461388,
+                                        :process 1707,
+                                        :index 10629}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 116 17]
+                                                [:append 120 31]],
+                                        :time 594690250587,
+                                        :process 1707,
+                                        :index 10693}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 120 32]
+                                                [:r
+                                                 125
+                                                 [4
+                                                  6
+                                                  7
+                                                  11
+                                                  13
+                                                  14
+                                                  15
+                                                  16
+                                                  17
+                                                  19]]],
+                                        :time 596533303661,
+                                        :process 1707,
+                                        :index 10733}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r
+                                                 120
+                                                 [1
+                                                  2
+                                                  3
+                                                  6
+                                                  7
+                                                  8
+                                                  9
+                                                  11
+                                                  13
+                                                  14
+                                                  15
+                                                  18
+                                                  19
+                                                  20
+                                                  21
+                                                  22
+                                                  23
+                                                  24
+                                                  25
+                                                  27
+                                                  29
+                                                  30
+                                                  31
+                                                  32]]
+                                                [:append 124 22]],
+                                        :time 596899481811,
+                                        :process 1707,
+                                        :index 10738}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 124 23]],
+                                        :time 597558616439,
+                                        :process 1707,
+                                        :index 10752}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 124 24]
+                                                [:append 124 25]],
+                                        :time 599470114176,
+                                        :process 1707,
+                                        :index 10787}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 124 27]],
+                                        :time 600206549902,
+                                        :process 1707,
+                                        :index 10799}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r
+                                                 124
+                                                 [1
+                                                  2
+                                                  3
+                                                  4
+                                                  5
+                                                  6
+                                                  7
+                                                  10
+                                                  11
+                                                  12
+                                                  13
+                                                  14
+                                                  15
+                                                  16
+                                                  18
+                                                  19
+                                                  20
+                                                  22
+                                                  23
+                                                  24
+                                                  25
+                                                  27]]
+                                                [:append 75 28]],
+                                        :time 601346220078,
+                                        :process 1707,
+                                        :index 10823}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r
+                                                 128
+                                                 [1
+                                                  2
+                                                  3
+                                                  5
+                                                  6
+                                                  7
+                                                  8
+                                                  9
+                                                  10
+                                                  11]]
+                                                [:append 75 29]],
+                                        :time 610010775155,
+                                        :process 1707,
+                                        :index 10995}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 75 15]
+                                                [:append 97 29]],
+                                        :time 478624448223,
+                                        :process 2245,
+                                        :index 8677}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r
+                                                 102
+                                                 [1
+                                                  2
+                                                  3
+                                                  5
+                                                  8
+                                                  9
+                                                  10
+                                                  12
+                                                  15
+                                                  17
+                                                  18
+                                                  19
+                                                  22
+                                                  23
+                                                  24
+                                                  25
+                                                  26]]
+                                                [:append 97 30]],
+                                        :time 482644458909,
+                                        :process 2013,
+                                        :index 8761}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r
+                                                 102
+                                                 [1
+                                                  2
+                                                  3
+                                                  5
+                                                  8
+                                                  9
+                                                  10
+                                                  12
+                                                  15
+                                                  17
+                                                  18
+                                                  19
+                                                  22
+                                                  23
+                                                  24
+                                                  25
+                                                  26
+                                                  28
+                                                  29
+                                                  31]]
+                                                [:append 97 31]],
+                                        :time 483784345009,
+                                        :process 2245,
+                                        :index 8785}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 97 26]
+                                                [:append 102 7]],
+                                        :time 476483485611,
+                                        :process 2269,
+                                        :index 8641}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:r 102 [4 6 7]]
+                                                [:append 90 4]],
+                                        :time 479038845412,
+                                        :process 1287,
+                                        :index 8683}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 84 32]
+                                                [:append 90 8]],
+                                        :time 569223401279,
+                                        :process 1707,
+                                        :index 10158}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 90 9]],
+                                        :time 571533131635,
+                                        :process 1707,
+                                        :index 10216}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 90 10]
+                                                [:append 123 27]],
+                                        :time 588486116277,
+                                        :process 1707,
+                                        :index 10555}
+                                       {:type :ok,
+                                        :f :txn,
+                                        :value [[:append 123 28]
+                                                [:append 123 29]],
+                                        :time 588517556506,
+                                        :process 1707,
+                                        :index 10559}],
+                               :steps ({:type :wr,
+                                        :key 123,
+                                        :value 29,
+                                        :a-mop-index 1,
+                                        :b-mop-index 1}
+                                       {:type :wr,
+                                        :key 124,
+                                        :value 5,
+                                        :a-mop-index 0,
+                                        :b-mop-index 0}
+                                       {:type :wr,
+                                        :key 120,
+                                        :value 21,
+                                        :a-mop-index 1,
+                                        :b-mop-index 1}
+                                       {:type :ww,
+                                        :key 116,
+                                        :value 14,
+                                        :value' 16,
+                                        :a-mop-index 0,
+                                        :b-mop-index 1}
+                                       {:type :ww,
+                                        :key 116,
+                                        :value 16,
+                                        :value' 17,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 120,
+                                        :value 31,
+                                        :value' 32,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :wr,
+                                        :key 120,
+                                        :value 32,
+                                        :a-mop-index 0,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 124,
+                                        :value 22,
+                                        :value' 23,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 124,
+                                        :value 23,
+                                        :value' 24,
+                                        :a-mop-index 0,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 124,
+                                        :value 25,
+                                        :value' 27,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :wr,
+                                        :key 124,
+                                        :value 27,
+                                        :a-mop-index 0,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 75,
+                                        :value 28,
+                                        :value' 29,
+                                        :a-mop-index 1,
+                                        :b-mop-index 1}
+                                       {:type :ww,
+                                        :key 75,
+                                        :value 29,
+                                        :value' 15,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 97,
+                                        :value 29,
+                                        :value' 30,
+                                        :a-mop-index 1,
+                                        :b-mop-index 1}
+                                       {:type :ww,
+                                        :key 97,
+                                        :value 30,
+                                        :value' 31,
+                                        :a-mop-index 1,
+                                        :b-mop-index 1}
+                                       {:type :ww,
+                                        :key 97,
+                                        :value 31,
+                                        :value' 26,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :wr,
+                                        :key 102,
+                                        :value 7,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 90,
+                                        :value 4,
+                                        :value' 8,
+                                        :a-mop-index 1,
+                                        :b-mop-index 1}
+                                       {:type :ww,
+                                        :key 90,
+                                        :value 8,
+                                        :value' 9,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 90,
+                                        :value 9,
+                                        :value' 10,
+                                        :a-mop-index 0,
+                                        :b-mop-index 0}
+                                       {:type :ww,
+                                        :key 123,
+                                        :value 27,
+                                        :value' 28,
+                                        :a-mop-index 1,
+                                        :b-mop-index 0}),
+                               :type :G1c}],
+                        :cycle-search-timeout [{:type :cycle-search-timeout,
+                                                :anomaly-spec-type :G-single,
+                                                :does-not-contain (:G0
+                                                                   :G1c),
+                                                :scc-size 3507}],
+                        :incompatible-order ({:key 65,
+                                              :values [[22 23 24 26]
+                                                       [1 2 11 12]]}
+                                             {:key 62,
+                                              :values [[1] [3 4]]}
+                                             {:key 59,
+                                              :values [[8] [26 28]]}
+                                             {:key 86,
+                                              :values [[5] [1]]}
+                                             {:key 72,
+                                              :values [[28]
+                                                       [26 27 29 30]]}
+                                             {:key 58,
+                                              :values [[6 12] [4 5 7]]}
+                                             {:key 60,
+                                              :values [[21] [1]]}
+                                             {:key 69,
+                                              :values [[20 21]
+                                                       [17 18 19]]}
+                                             {:key 101,
+                                              :values [[1] [3 4]]}
+                                             {:key 102,
+                                              :values [[4 6 7]
+                                                       [1 2 3 5]]}
+                                             {:key 55,
+                                              :values [[2] [1]]}
+                                             {:key 85,
+                                              :values [[2 3 4]
+                                                       [7 8 12 13]]}
+                                             {:key 88,
+                                              :values [[2] [1]]}
+                                             {:key 77,
+                                              :values [[8] [14]]}
+                                             {:key 95,
+                                              :values [[2] [1]]}
+                                             {:key 54,
+                                              :values [[2] [1]]}
+                                             {:key 92,
+                                              :values [[1 6] [2 3 4]]}
+                                             {:key 104,
+                                              :values [[2] [1]]}
+                                             {:key 48,
+                                              :values [[4 5 6]
+                                                       [13 14 15 18]]}
+                                             {:key 75,
+                                              :values [[3 4] [9 11]]}
+                                             {:key 99,
+                                              :values [[3] [4 5]]}
+                                             {:key 113,
+                                              :values [[1] [3 4]]}
+                                             {:key 91,
+                                              :values [[1 3] [2 4]]}
+                                             {:key 56,
+                                              :values [[14] [13 21]]}
+                                             {:key 90,
+                                              :values [[2] [1]]}
+                                             {:key 41,
+                                              :values [[19] [2]]}
+                                             {:key 89,
+                                              :values [[1 2 4 5 7]
+                                                       [15
+                                                        17
+                                                        20
+                                                        23
+                                                        25
+                                                        26]]}
+                                             {:key 100,
+                                              :values [[3 7] [1 2]]}
+                                             {:key 61,
+                                              :values [[3] [1]]}
+                                             {:key 44,
+                                              :values [[23] [1]]}
+                                             {:key 93,
+                                              :values [[3] [1 5]]}
+                                             {:key 28,
+                                              :values [[23] [2 3]]}
+                                             {:key 103,
+                                              :values [[1] [3 17]]}
+                                             {:key 51,
+                                              :values [[27 29]
+                                                       [4 2 3]]}
+                                             {:key 3,
+                                              :values [[15 32]
+                                                       [1
+                                                        3
+                                                        7
+                                                        8
+                                                        12
+                                                        13
+                                                        19
+                                                        23]]}
+                                             {:key 2,
+                                              :values [[9] [1]]}
+                                             {:key 66,
+                                              :values [[1 2]
+                                                       [3 4 5 6]]}
+                                             {:key 47,
+                                              :values [[4] [2]]}
+                                             {:key 82,
+                                              :values [[3 11 13]
+                                                       [1 2 4 5 7 6 8]]}
+                                             {:key 97,
+                                              :values [[5] [1]]}
+                                             {:key 112,
+                                              :values [[6 7] [5 8]]}
+                                             {:key 83,
+                                              :values [[1] [2 4]]}
+                                             {:key 53,
+                                              :values [[21]
+                                                       [16 19 20]]}
+                                             {:key 78,
+                                              :values [[3] [2]]}
+                                             {:key 81,
+                                              :values [[3] [1]]}
+                                             {:key 79,
+                                              :values [[3] [1]]}
+                                             {:key 98,
+                                              :values [[1 6 7]
+                                                       [2 3 4]]}
+                                             {:key 87,
+                                              :values [[13 15]
+                                                       [1 2 3]]}
+                                             {:key 96,
+                                              :values [[5 8]
+                                                       [13 16 17]]}
+                                             {:key 105,
+                                              :values [[1 2]
+                                                       [3 4 5 6 7 8 9]]}
+                                             {:key 52,
+                                              :values [[10 26] [2 23]]}
+                                             {:key 114,
+                                              :values [[1] [2 3 4 5]]}
+                                             {:key 80,
+                                              :values [[13 22 26]
+                                                       [1 2 3]]}
+                                             {:key 63,
+                                              :values [[12] [1]]}
+                                             {:key 94,
+                                              :values [[13 15]
+                                                       [6 10 12]]}
+                                             {:key 49,
+                                              :values [[3] [1]]}
+                                             {:key 84,
+                                              :values [[9] [2 3]]})},
+            :not #{:read-atomic :read-uncommitted},
+            :also-not #{:ROLA
+                        :causal-cerone
+                        :consistent-view
+                        :cursor-stability
+                        :forward-consistent-view
+                        :monotonic-atomic-view
+                        :monotonic-snapshot-read
+                        :monotonic-view
+                        :parallel-snapshot-isolation
+                        :prefix
+                        :read-committed
+                        :repeatable-read
+                        :serializable
+                        :snapshot-isolation
+                        :strong-serializable
+                        :strong-session-serializable
+                        :strong-session-snapshot-isolation
+                        :strong-snapshot-isolation
+                        :update-serializable}},
+ :valid? false}

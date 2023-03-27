@@ -1,0 +1,14 @@
+G1c #0
+Let:
+  T1 = {:type :ok, :f :txn, :value [[:append 3410 22] [:append 3414 4]], :time 14994845167703, :process 44368, :index 303511}
+  T2 = {:type :ok, :f :txn, :value [[:append 3410 23] [:append 3413 10]], :time 14995665227599, :process 44368, :index 303531}
+  T3 = {:type :ok, :f :txn, :value [[:append 3414 24] [:r 3410 [1 2 8 9 12 14 16 17 18 21 22 23]]], :time 15000029581025, :process 40576, :index 303622}
+  T4 = {:type :ok, :f :txn, :value [[:append 3414 27]], :time 15000958018917, :process 40576, :index 303636}
+  T5 = {:type :ok, :f :txn, :value [[:append 3414 32]], :time 15002365106968, :process 44388, :index 303669}
+
+Then:
+  - T1 < T2, because T2 appended 23 after T1 appended 22 to 3410.
+  - T2 < T3, because T3 observed T2's append of 23 to key 3410.
+  - T3 < T4, because T4 appended 27 after T3 appended 24 to 3414.
+  - T4 < T5, because T5 appended 32 after T4 appended 27 to 3414.
+  - However, T5 < T1, because T1 appended 4 after T5 appended 32 to 3414: a contradiction!
